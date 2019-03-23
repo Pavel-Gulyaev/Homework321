@@ -6,9 +6,19 @@ import android.widget.TextView;
 
 public class NumerCreator implements View.OnClickListener {
 
+    public void setNum(String num) {
+        this.num = num;
+    }
+
     private String num = "";
     private boolean dotted;
+
+    public TextView getText() {
+        return text;
+    }
+
     private TextView text;
+
 
     public NumerCreator (View ... buttons){
 
@@ -27,20 +37,43 @@ public class NumerCreator implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if (!(v.getId() == R.id.btndot)) {
-            num += ((Button) v).getText().toString();
-            text.setText(num);
-            if (num.equals("0")){
-                num = "";
-            }
-        }
-        if (v.getId() == R.id.btndot){
-            if (!dotted) {
-                num += ((Button) v).getText().toString();
-                text.setText(num);
 
-                dotted = true;
+        switch (v.getId()) {
+
+            case (R.id.btnC):{
+                if(!(num.equals(""))) {
+                    num = num.substring(0, num.length() - 1);
+                }
+            }
+
+            case (R.id.btndot): {
+                if (!dotted) {
+                    num += ((Button) v).getText().toString();
+                    dotted = true;
+                }
+                break;
+            }
+            case (R.id.btnsign): {
+                if (num.contains("-")) {
+                    num = num.substring(1, num.length());
+                } else {
+                    num = "-" + num;
+                }
+
+
+                break;
+            }
+            default: {
+                if (num.equals("0") || num.equals("-0")) {
+                    num = "";
+                }
+                num += ((Button) v).getText().toString();
+
+                if (num.equals("0")) {
+                    num = "";
+                }
             }
         }
+        text.setText(num);
     }
 }

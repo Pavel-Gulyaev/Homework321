@@ -2,32 +2,104 @@
 
 
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/text"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.4"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layoutNum"
+
+
+        android:gravity="right|bottom"
         android:text="0"
         android:textSize="36sp"
-        android:gravity="right|bottom"
 
         />
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0.6"
-        android:orientation="vertical">
+        android:layout_toRightOf= "@+id/layoutNum"
+        android:layout_alignParentBottom="true"
 
-        <android.support.constraint.ConstraintLayout
+        android:gravity="right"
+
+
+        android:orientation="vertical"
+        >
+
+        <Button
+            android:id="@+id/btnDel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:layout_weight="0.2"
+            android:text="/"
+
+            android:textSize="36sp" />
+        <Button
+            android:id="@+id/btnMulty"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:layout_weight="0.2"
+            android:text="*"
+
+            android:textSize="36sp" />
+        <Button
+            android:id="@+id/btnMinus"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:layout_weight="0.2"
+            android:text="-"
+
+            android:textSize="36sp" />
+        <Button
+            android:id="@+id/btnPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:layout_weight="0.2"
+            android:text="+"
+
+            android:textSize="36sp" />
+        <Button
+            android:id="@+id/btnEqual"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:layout_weight="0.2"
+            android:text="="
+
+            android:textSize="36sp" />
+
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/layoutNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+
+        android:gravity="center"
+
+
+        android:orientation="vertical"
+        >
+
+
+
+
+    <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -140,6 +212,41 @@
 
 
         </android.support.constraint.ConstraintLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="horizontal"
+            android:layout_weight="0.2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnC"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+
+                android:textSize="36sp"
+                android:layout_weight="0.3"
+
+                android:text="C"/>
+            <Button
+                android:id="@+id/btnsign"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:textSize="36sp"
+
+                android:text="+/-"/>
+            <Button
+                android:id="@+id/btnpercent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:textSize="36sp"
+
+                android:text="%"/>
+
+
+        </LinearLayout>
 
 
 
@@ -277,4 +384,4 @@
     </LinearLayout>
 
 
-</LinearLayout>
+</RelativeLayout>

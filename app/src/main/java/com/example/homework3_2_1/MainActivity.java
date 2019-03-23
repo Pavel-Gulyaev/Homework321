@@ -23,7 +23,18 @@ public class MainActivity extends AppCompatActivity {
                 (Button) findViewById(R.id.btn7),
                 (Button) findViewById(R.id.btn8),
                 (Button) findViewById(R.id.btn9),
-                (Button) findViewById(R.id.btndot));
+                (Button) findViewById(R.id.btndot),
+                (Button) findViewById(R.id.btnsign),
+                (Button) findViewById(R.id.btnC));
+
+        Calculate calculate = new Calculate(
+                numerCreator,
+                (Button) findViewById(R.id.btnMinus),
+                (Button) findViewById(R.id.btnMulty),
+                (Button) findViewById(R.id.btnpercent),
+                (Button) findViewById(R.id.btnPlus),
+                (Button) findViewById(R.id.btnDel),
+                (Button) findViewById(R.id.btnEqual));
 
     }
 }
